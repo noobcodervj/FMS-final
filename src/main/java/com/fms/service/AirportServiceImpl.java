@@ -32,7 +32,7 @@ public class AirportServiceImpl implements AirportService {
 	}
 
 	/*
-	 * view airport by airportCode
+	 * view airport by flightCode
 	 */
 	@Override
 	public Airport viewAirport(String flightCode) {
