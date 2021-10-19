@@ -45,15 +45,7 @@ public class ScheduledFlightServiceImpl implements ScheduledFlightService {
 	 */
 	@Override
 	public ScheduledFlight modifyScheduledFlight(ScheduledFlight scheduleFlight) {
-		ScheduledFlight updateScheduleFlight = dao.findById(scheduleFlight.getScheduleFlightId()).get();
-		Schedule updateSchedule = scheduleDao.findById(scheduleFlight.getSchedule().getScheduleId()).get();
-		updateScheduleFlight.setAvailableSeats(scheduleFlight.getAvailableSeats());
-		updateSchedule.setSrcAirport(scheduleFlight.getSchedule().getSrcAirport());
-		updateSchedule.setDstnAirport(scheduleFlight.getSchedule().getDstnAirport());
-		updateSchedule.setArrDateTime(scheduleFlight.getSchedule().getArrDateTime());
-		updateSchedule.setDeptDateTime(scheduleFlight.getSchedule().getDeptDateTime());
-		dao.save(updateScheduleFlight);
-		return scheduleFlight;
+		return dao.save(scheduleFlight);
 	}
 
 	/*
